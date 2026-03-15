@@ -1,1 +1,173 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
 
+body{
+height:100vh;
+background:url("https://images.unsplash.com/photo-1501630834273-4b5604d2ee31") center/cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+width:350px;
+}
+
+/* верхняя панель */
+
+.top-bar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.search{
+flex:1;
+padding:10px;
+border-radius:20px;
+border:none;
+margin-right:10px;
+}
+
+.profile{
+width:35px;
+height:35px;
+background:#ddd;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* карточки */
+
+.card{
+background:rgba(255,255,255,0.35);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:20px;
+}
+
+/* главная погода */
+
+.main-weather{
+margin-bottom:15px;
+text-align:center;
+}
+
+.main-weather h1{
+font-size:48px;
+}
+
+.weather-icon{
+font-size:60px;
+margin-bottom:10px;
+}
+
+/* инфо */
+
+.info{
+background:rgba(255,255,255,0.35);
+padding:10px;
+border-radius:20px;
+margin-bottom:15px;
+font-size:14px;
+}
+
+/* города */
+
+.cities{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
+
+.city{
+flex:1;
+text-align:center;
+}
+
+.city h2{
+font-size:32px;
+}
+
+.city i{
+font-size:30px;
+margin-bottom:5px;
+}
+
+/* предупреждения */
+
+.alerts{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.alert{
+background:rgba(255,255,255,0.35);
+padding:10px;
+border-radius:20px;
+font-size:14px;
+}
+
+.alert i{
+margin-right:8px;
+}
+/* цветные иконки */
+
+.fa-sun{
+color:gold;
+}
+
+.fa-cloud-sun{
+color:orange;
+}
+
+.fa-cloud-rain{
+color:#3498db;
+}
+
+.fa-snowflake{
+color:#5dade2;
+}
+
+.fa-cloud-bolt{
+color:#9b59b6;
+}
+
+.fa-fire{
+color:#e74c3c;
+}
+
+.fa-water{
+color:#2980b9;
+}
+
+/* иконка профиля */
+
+.profile i{
+color:#444;
+}
+
+.sun{
+color:orange;
+position:absolute;
+left:10px;
+top:0;
+font-size:45px;
+}
+
+
+.cloud{
+color:white;
+position:absolute;
+left:30px;
+top:20px;
+font-size:40px;
+}
