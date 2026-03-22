@@ -1,95 +1,75 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Weather App</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast UA — Погода</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<div class="container">
+    <div class="wrapper">
+        <div class="dashboard glass">
+            
+            <!-- ЛІВА ПАНЕЛЬ: Головна погода -->
+            <div class="main-side">
+                <div class="main-weather">
+                    <img src="https://openweathermap.org/img/wn/01d@4x.png" id="mainIcon" alt="icon">
+                    <div class="main-text">
+                        <h1 id="mainTemp">--°C</h1>
+                        <h2 id="cityName">Завантаження...</h2>
+                        <p id="description">Отримуємо дані</p>
+                    </div>
+                </div>
+                <div class="uv-bar glass-btn">
+                    <span>☀️ Низький рівень УФ-випромінювання</span>
+                </div>
+            </div>
 
-<header class="top-bar">
+            <!-- ПРАВА ПАНЕЛЬ: Пошук та віджети -->
+            <div class="side-panel">
+                <header class="search-area">
+                    <input type="text" id="cityInput" placeholder="Введіть назву міста..." spellcheck="false">
+                    <div class="profile-btn glass-btn" title="Профіль">👤</div>
+                </header>
 
-<input type="text" placeholder="Search city..." class="search">
+                <p class="section-title">Популярні міста</p>
+                <div class="mini-grid">
+                    <!-- Ці картки тепер динамічні: натисни на них -->
+                    <div class="mini-card glass-btn" onclick="checkWeather('London')">
+                        <img src="https://openweathermap.org/img/wn/09d@2x.png">
+                        <h3 id="temp-London">--°C</h3>
+                        <p>Лондон</p>
+                    </div>
+                    <div class="mini-card glass-btn" onclick="checkWeather('Madrid')">
+                        <img src="https://openweathermap.org/img/wn/01d@2x.png">
+                        <h3 id="temp-Madrid">--°C</h3>
+                        <p>Мадрид</p>
+                    </div>
+                </div>
 
-<div class="profile">
-<i class="fa-solid fa-user"></i>
-</div>
+                <p class="section-title">Сповіщення</p>
+                <div class="alerts-list">
+                    <div class="alert-item glass-btn">⚡️ Грозове попередження...</div>
+                    <div class="alert-item glass-btn">❄️ Заморозки в Канаді...</div>
+                    <div class="alert-item glass-btn">🔥 Пожежі в Австралії...</div>
+                </div>
+            </div>
 
-</header>
+        </div>
+    </div>
 
-<div class="main-weather card">
+    <!-- Спливаюче вікно (Toast) -->
+    <div id="weatherToast" class="toast glass-btn">
+        <img src="" id="toastIcon">
+        <div class="toast-info">
+            <h4 id="toastCity">Ваш регіон</h4>
+            <p id="toastTemp">--°C</p>
+        </div>
+        <button onclick="this.parentElement.classList.remove('show')">✕</button>
+    </div>
 
-<div class="weather-icon">
-<i class="fa-solid fa-sun sun"></i>
-<i class="fa-solid fa-cloud cloud"></i>
-</div>
-
-<h1>26°C</h1>
-
-<p>Saint Little James.<br>Cloudy.</p>
-
-</div>
-
-<div class="info">
-<i class="fa-solid fa-sun"></i> Low UV radiation level.
-</div>
-
-<div class="cities">
-
-<div class="city card">
-
-<i class="fa-solid fa-cloud-rain"></i>
-
-<h2>09°C</h2>
-
-<p>London.<br>Rain.</p>
-
-</div>
-
-<div class="city card">
-
-<i class="fa-solid fa-sun"></i>
-
-<h2>14°C</h2>
-
-<p>Madrid.<br>Sunny.</p>
-
-</div>
-
-</div>
-
-<div class="alerts">
-
-<div class="alert">
-<i class="fa-solid fa-cloud-bolt"></i> Severe thunderstorm warning in...
-</div>
-
-<div class="alert">
-<i class="fa-solid fa-snowflake"></i> Frostbite in Canada...
-</div>
-
-<div class="alert">
-<i class="fa-solid fa-fire"></i> Extreme forest fires in Australia...
-</div>
-
-<div class="alert">
-<i class="fa-solid fa-water"></i> Floods at China’s east coast...
-</div>
-
-</div>
-
-</div>
-
+    <script src="script.js"></script>
 </body>
 </html>
